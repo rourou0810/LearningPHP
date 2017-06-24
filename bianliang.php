@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo "PHP标记语言的使用" ?></title>
+	<title><?php echo "PHP变量" ?></title>
 </head>
 <body>
 
