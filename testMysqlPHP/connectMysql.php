@@ -114,7 +114,7 @@
 	echo "<h2>菜鸟教程mysqli_fetch_array测试</h2>";
 	echo "<table border='1'><tr><td>教程ID</td><td>标题</td><td>作者</td><td>提交日期</td></tr>";
 
-	//可以使用常量 MYSQL_ASSOC 作为 PHP mysqli_fetch_array() 函数的第二个参数，返回关联数组
+	//可以使用常量 MYSQL_NUM 作为 PHP mysqli_fetch_array() 函数的第二个参数，返回数字数组
 	while($row = mysqli_fetch_array($retval,MYSQL_ASSOC)){
 		echo "<tr><td> {$row['runoob_id']}</td> ".
 	         "<td>{$row['runoob_title']} </td> ".
@@ -136,6 +136,27 @@
 	//关闭数据库连接
 	mysqli_close($conn);	
 	
+?>
+
+<?php  
+
+//----------------------使用原生mysql函数操作数据库-------------------------
+
+	$link = mysql_connect($dbhost, $dbuser, $dbpass);
+	mysql_select_db('bookstone');
+	$result = mysql_query($sql);
+
+	//从结果集中获取数据记录行的个数
+	mysql_num_rows($result);
+
+	mysql_fetch_row($result);
+	mysql_fetch_assoc($result);
+	mysql_fetch_array($result);
+
+	mysql_free_result($result);
+	mysql_close($link);
+
+
 ?>
 
 </body>
