@@ -16,10 +16,10 @@
 	drop table if exists categories;
 	create table categories(
 		categoryId samllint(4) unsigend not null auto_increment, //图书类别ID
-		pid samllint(4) unsigend not null default '0',			 //图书类别的父ID
-		categoryName varchar(15) not null unique,				 //图书类别名称
-		categoryDesn text not null,								 //图书类别描述
-		primary key (categoryId)								 //设置类别ID为主键
+		pid samllint(4) unsigend not null default '0',	         //图书类别的父ID
+		categoryName varchar(15) not null unique,		 //图书类别名称
+		categoryDesn text not null,				 //图书类别描述
+		primary key (categoryId)				 //设置类别ID为主键
 	)TYPE=MyISAM;//设置表类型为MyISAM
 
 
