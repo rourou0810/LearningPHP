@@ -1,55 +1,74 @@
 <?php 
 	
 	header("Content-Type:text/html;charset=utf-8");
-	//用户注册
 
-	function connectMysql($dbhost, $dbuser, $dbpwd, $dbname) {
-		//连接数据库
-		$conn = mysqli_connect($dbhost, $dbuser, $dbpwd);
-		//防止中文乱码
-		mysqli_set_charset($conn, "utf8");
-		//mysqli_query($conn , "set names utf8");
-		//选择数据库
-		mysqli_select_db($conn, $dbname);
+	class Connmysql {
+		private $dbhost;
+		private $dbuser;
+		private $dbpwd;
+		private $dbname;
 
-		return $conn;
-	}
-
-	$conn = connectMysql("localhost:3306", "root", "", "users");
-
-	$username = $_POST["username"];
-	$pwd      = $_POST["password"];
-	$email    = $_POST["email"];
-	
-	//判断用户名、密码、邮箱是否设置
-	if(empty($username) && empty($pwd) && empty($email)){
-		exit();
-	}
-
-	//插入数据之前先验证用户名或邮箱是否被注册
-	$sql = "SELECT * FROM userlist WHERE username='".$username."' OR email='".$email."'";
-	$result = mysqli_query($conn, $sql);
-
-
-	if(mysqli_num_rows($result) == 0){
-
-		//插入前台页面提交的用户数据
-		$sql = "INSERT INTO userlist(username,password,email) VALUES ('".$username."','".$pwd."','".$email."')";
-		$result = mysqli_query($conn, $sql);
-		if(!$result) {
-			die("无法插入数据".mysqli_error($result));
+		function __construct($dbhost, $dbuser, $dbpwd, $dbname) {
+			$this->dbhost = $dbhost;
+			$this->dbuser = $dbuser;
+			$this->dbpwd  = $dbpwd;
+			$this->dbname = $dbname;
 		}
-		echo "数据插入成功";
-	}else{
-		while($row = mysqli_fetch_assoc($result)){
-			if($username == $row["username"]){
-				echo "此用户名已被注册！";
-			}else if ($email == $row["email"]){
-				echo "此邮箱已被注册！";
+
+		public function connectMysql() {
+			$conn = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpwd);
+			mysqli_set_charset($conn, "utf8");
+			mysqli_select_db($conn, $this->dbname);
+			return $conn;
+		}
+	}
+
+	class Checkresult{
+
+		private $username;
+		private $pwd;
+		private $email;
+
+		function __construct($username, $pwd, $email) {
+			$this->username = $username;
+			$this->pwd      = $pwd;
+			$this->email    = $email;
+		}
+
+		public function checkData($conn) {
+			
+			if(empty($this->username) && empty($this->pwd) && empty($this->email)){
+				exit();
 			}
+
+			$sql = "SELECT * FROM userlist WHERE username='".$this->username."' OR email='".$this->email."'";
+			$result = mysqli_query($conn, $sql);
+			if(mysqli_num_rows($result) > 0){
+				$row = mysqli_fetch_assoc($result);
+				if($this->username == $row["username"]){
+					echo "此用户名已被注册过！";
+				}
+				exit();	
+			}
+
+			$sql = "INSERT INTO userlist(username,password,email) VALUES ('".$this->username."','".$this->pwd."','".$this->email."')";
+			$result = mysqli_query($conn, $sql);
+			if(!($result)) {
+				die("无法插入数据".mysqli_error($result));
+			}
+			echo "插入成功！";
 		}
 	}
+
+	$connsql = new Connmysql("localhost:3306", "root", "", "users");
+	$conn = $connsql->connectMysql();
+
+	$checkresult = new Checkresult($_POST["username"], $_POST["password"], $_POST["email"]);
 	
+	$checkresult->checkData($conn);
+	
+
+
 	//释放内存
 	//mysqli_free_result($result);
 
