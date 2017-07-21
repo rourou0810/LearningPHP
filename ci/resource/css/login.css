@@ -1,0 +1,33 @@
+#loginbox .panel-default{
+	box-shadow: 5px 5px 10px #aaa,-5px -5px 10px #aaa;
+	border:none;
+}
+.panel-default .row{
+	margin-left: 0;
+	margin-right: 0;
+}
+.panel-heading span{
+	display: block;
+	line-height: 52px;
+	font-size: 24px;
+	color: rgba(43, 191, 217, 0.9);
+	/*letter-spacing: 5px;*/
+}
+.panel-heading .col-md-6:last-child{
+	text-align: center;
+}
+
+#loginbox .panel-body{
+	padding:0;
+}
+#loginbox .panel-body{
+	padding:30px;
+}
+#loginbox .panel-heading,#loginbox .panel-footer{
+	background-color: #fff;
+}
+.errortip{
+	margin:0px 10px 10px 22px;
+	color: red;
+}
+
