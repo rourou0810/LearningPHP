@@ -1,4 +1,11 @@
+<!--sidebar-menu-->
 
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i></a>
+  <ul>
+    <li class="active"><a href="<?php echo base_url('index.php/home/index') ?>"><i class="icon icon-home"></i> <span>首页</span></a> </li>
+    <li> <a href="<?php echo base_url('index.php/article/index') ?>"><i class="icon icon-signal"></i> <span>文章</span></a> </li>
+  </ul>
+</div>
 
 
 <div id="content">

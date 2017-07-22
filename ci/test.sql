@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-07-21 15:26:23
+-- Generation Time: 2017-07-22 14:16:52
 -- 服务器版本： 5.7.14
 -- PHP Version: 5.6.25
 
@@ -33,7 +33,7 @@ CREATE TABLE `article` (
   `content` text NOT NULL,
   `introduction` varchar(500) NOT NULL,
   `keywords` varchar(200) NOT NULL,
-  `author` int(11) NOT NULL DEFAULT '0',
+  `author` varchar(100) NOT NULL DEFAULT '0',
   `recommend` int(11) NOT NULL DEFAULT '0',
   `rank` int(11) NOT NULL DEFAULT '0',
   `createTime` date NOT NULL
@@ -44,8 +44,11 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `title`, `source`, `content`, `introduction`, `keywords`, `author`, `recommend`, `rank`, `createTime`) VALUES
-(1, '给PHPer聊聊Linux|Laoyang技术工作室', 'PHP', '给PHPer聊聊Linux|Laoyang技术工作室\r\n给PHPer聊聊Linux|Laoyang技术工作室\r\n给PHPer聊聊Linux|Laoyang技术工作室\r\n给PHPer聊聊Linux|Laoyang技术工作室\r\n给PHPer聊聊Linux|Laoyang技术工作室', '给PHPer聊聊Linux|Laoyang技术工作室', 'PHP', 0, 0, 0, '2017-07-21'),
-(2, '聊一聊PHP现代编程技术', 'Laoyang工作室', '1.我们团队都关注哪些资料；\r\n2.你是否为团队的LNMP环境一直烦恼？', '聊一聊PHP现代编程技术', 'PHP', 0, 0, 0, '2017-07-21');
+(23, '犯得上反对地方', NULL, '<p>规划分局健康和v</p>', '加快速度恢复的时刻', '好久不见收到收到', 'renwei ', 0, 0, '0000-00-00'),
+(24, '持续性', NULL, '<p><em><strong>的反对反对的附带官方说法</strong></em></p>', '的三分到手', '打发打发', 'renwei', 0, 0, '0000-00-00'),
+(25, '看见对方的空间', NULL, '<p>发到手机开放看电视剧犯得上看见发生了发</p>', '健康的方式能否看见', '肯定发生了能否', '的是看风景的', 0, 0, '0000-00-00'),
+(26, '减肥的思考了解放螺丝扣', NULL, '<p>考试的方式jfk是否</p>', '快速打开附件是浪费', '你，是短发女生开房', 'dfjks ', 0, 0, '0000-00-00'),
+(27, '收费的克利夫兰', NULL, '<p>螺丝钉解放了多少jfk罗斯福</p>', '的时间发牢骚看风景', '圣诞快乐附近的', 'young', 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -94,6 +97,12 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 --
 
 --
+-- Indexes for table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
@@ -110,6 +119,11 @@ ALTER TABLE `user`
 -- 在导出的表使用AUTO_INCREMENT
 --
 
+--
+-- 使用表AUTO_INCREMENT `article`
+--
+ALTER TABLE `article`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- 使用表AUTO_INCREMENT `news`
 --

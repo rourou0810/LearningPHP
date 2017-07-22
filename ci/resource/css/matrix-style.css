@@ -1167,7 +1167,16 @@ form {
 	margin-left: 50px;
 	padding: 20px 0;
 	float: left;
-	width: 49%;
+	width: 70%;
+}
+.form-horizontal .controls input,.form-horizontal .controls textarea{
+	width: 60%;
+}
+.form-horizontal .controls .errortip{
+	display: inline-block;
+    margin-top: 6px;
+    margin-left: 10px;
+    color: red;
 }
 .form-horizontal input[type=text], .form-horizontal input[type=password], .form-horizontal textarea {
 }

@@ -10,7 +10,12 @@
 <link rel="stylesheet" href="<?php echo base_url('resource/css/fullcalendar.css'); ?>" />
 <link rel="stylesheet" href="<?php echo base_url('resource/css/matrix-style.css'); ?>" />
 <link rel="stylesheet" href="<?php echo base_url('resource/css/matrix-media.css'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('resource/css/uniform.css'); ?>">
 <link href="<?php echo base_url('resource/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet" />
+<script type="text/javascript" src="<?php echo base_url('resource/js/jquery.min.js'); ?>"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url('resource/ueditor/ueditor.config.js'); ?>"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url('resource/ueditor/ueditor.all.min.js'); ?>"> </script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url('resource/ueditor/lang/zh-cn/zh-cn.js'); ?>"></script>
 </head>
 <body>
 
@@ -33,14 +38,3 @@
   </ul>
 </div>
 
-<!--sidebar-menu-->
-
-<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i></a>
-  <ul>
-    <li><a href="<?php echo base_url('index.php/home/index') ?>"><i class="icon icon-home"></i> <span>首页</span></a> </li>
-    <li> <a href="<?php echo base_url('index.php/article/index') ?>"><i class="icon icon-signal"></i> <span>文章</span></a> </li>
-    <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Widgets</span></a> </li>
-    <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
-    <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
-  </ul>
-</div>
