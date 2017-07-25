@@ -50,7 +50,7 @@ class Article extends CI_Controller
 		$rows = $res->num_rows() ;
 		$config['total_rows']=$rows;  
 
-		//初始化 ，传入配置？？？？  
+		//初始化 ，传入配置
 		$this->pagination->initialize($config);  
 		$data['links'] = $this->pagination->create_links(); 
 
