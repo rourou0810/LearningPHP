@@ -112,7 +112,7 @@ $("#delBtn").click(function(){
         idList.push($(this).data('id')); 
     });
 
-    function hideAlert(href) {
+    function hideAlert() {
         $('.dj-alert-close').click(function() {
             $('#maskAlert').hide();   
         })
