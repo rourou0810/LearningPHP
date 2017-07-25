@@ -21,13 +21,13 @@
 	padding:0;
 }
 #loginbox .panel-body{
-	padding:30px;
+	padding:50px;
 }
 #loginbox .panel-heading,#loginbox .panel-footer{
 	background-color: #fff;
 }
 .errortip{
-	margin:0px 10px 10px 22px;
+	margin:0px 10px 10px 40px;
 	color: red;
 }
 

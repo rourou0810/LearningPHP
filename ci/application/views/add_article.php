@@ -67,7 +67,7 @@
                         <span class="errortip"></span>
                       </div>
                     </div>
-                    <div class="form-actions" style="float: right;margin-right: 100px;">
+                    <div class="form-actions" style="float: right;margin-right: 200px;">
                       <button id="articleSaveBtn" type="submit" class="btn btn-success">保存</button>
                     </div>
                   </div>
@@ -81,7 +81,7 @@
 
 <div id="maskAlert" style="display:none;">
     <div id="dj-mask-alert" style="opacity: 0.5; width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; z-index: 1000; background: rgb(0, 0, 0);"></div>
-    <div class="dj-mask-alert-302748" style="width: 300px; overflow: hidden; border: 1px solid rgb(221, 221, 221); z-index: 1001; border-radius: 4px; position: fixed; top: 235.6px; left: 671.5px; margin-left: -100px; margin-top: 0px; background: rgb(255, 255, 255);"><div style="height:30px;border-bottom:1px solid #ddd;line-height:30px;padding-left:10px;font-size:14px;color:#666;background:#ebebeb">提示
+    <div class="dj-mask-alert-302748" style="width: 300px; overflow: hidden; border: 1px solid rgb(221, 221, 221); z-index: 1001; border-radius: 4px; position: fixed; top: 40%; left: 50%; margin-left: -100px; margin-top: 0px; background: rgb(255, 255, 255);"><div style="height:30px;border-bottom:1px solid #ddd;line-height:30px;padding-left:10px;font-size:14px;color:#666;background:#ebebeb">提示
         <a style="float: right; margin-right: 10px; cursor: pointer; color: rgb(102, 102, 102); font-size: 15px; transition: all 0.4s ease-in-out;" class="dj-alert-close">X</a>
         </div>
         <div style="font-size:13px;color:#333;padding:30px;overflow:hidden;word-break:break-all" class="dj-alert-content">
@@ -148,7 +148,7 @@ $(function(){
                     'author':$author.val(),
                     'keywords':$keywords.val(),
                     'introduce':$introduce.val(),
-                    'editorValue':ue.getContent(),
+                    'editorValue':ue.getContent()
                 },
                 success:function(msg){
                     if(msg == 1){

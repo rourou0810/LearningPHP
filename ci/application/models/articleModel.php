@@ -11,13 +11,13 @@ class ArticleModel extends CI_Model
 		$this->load->database();
 	}
 
-	public function articleList()
+	public function articleList($offset,$page_size)
 	{
 		//查询文章列表数据
-		$query = $this->db->query("SELECT * FROM article");
-		$data  = $query->result();
+		$query = $this->db->query("SELECT * FROM article LIMIT ".$offset.",".$page_size."");
+		//$data  = $query->result();
 
-		return $data;
+		return $query;
 	}
 
 	public function addArticle($data)
@@ -39,7 +39,15 @@ class ArticleModel extends CI_Model
 	public function updateArticle($data,$id)
 	{
 		//修改当前id的数据
-		$bool=$this->db->update('article',$data,array('id'=>$id));//返回布尔值
+		$bool = $this->db->update('article',$data,array('id'=>$id));//返回布尔值
+		return $bool;
+	}
+
+	public function deleteArticle($ids)
+	{
+		$this->db->where_in('id',$ids);
+		$bool = $this->db->delete('article');
+
 		return $bool;
 	}
 }
