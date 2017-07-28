@@ -561,7 +561,7 @@ class CI_Pagination {
 		$output = '';
 
 		// Render the "First" link.
-		if ($this->first_link !== FALSE && $this->cur_page > ($this->num_links + 1 + ! $this->num_links))
+		if ($this->first_link !== FALSE)
 		{
 			// Take the general parameters, and squeeze this pagination-page attr in for JS frameworks.
 			$attributes = sprintf('%s %s="%d"', $this->_attributes, $this->data_page_attr, 1);
@@ -637,7 +637,7 @@ class CI_Pagination {
 		}
 
 		// Render the "Last" link
-		if ($this->last_link !== FALSE && ($this->cur_page + $this->num_links + ! $this->num_links) < $num_pages)
+		if ($this->last_link !== FALSE)
 		{
 			$i = ($this->use_page_numbers) ? $num_pages : ($num_pages * $this->per_page) - $this->per_page;
 

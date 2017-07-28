@@ -73,9 +73,9 @@ class Article extends CI_Controller
 			$res = $this->articleModel->articleList($offset,$page_size);
 			$data['articleList'] = $res->result();
 			
-			$this->load->view('template/header',$data);
-			$this->load->view('article_list',$data);
-			$this->load->view('template/footer');
+			$this->load->view('admin/template/header',$data);
+			$this->load->view('admin/article_list',$data);
+			$this->load->view('admin/template/footer');
 		}else{
 			redirect('login/index');
 		}
@@ -99,9 +99,9 @@ class Article extends CI_Controller
 
 
 		if(empty($title) || empty($author) || empty($keywords) || empty($introduce) || empty($editorValue)){
-			$this->load->view('template/header',$data);
-			$this->load->view('add_article',$data);
-			$this->load->view('template/footer');
+			$this->load->view('admin/template/header',$data);
+			$this->load->view('admin/add_article',$data);
+			$this->load->view('admin/template/footer');
 		}
 
 		else{
@@ -144,9 +144,9 @@ class Article extends CI_Controller
 		$data['id']   = $this->uri->segment(3);
 
 		$data['editArticle'] = $this->articleModel->editArticle($data['id']);
-		$this->load->view('template/header',$data);
-		$this->load->view('add_article',$data);
-		$this->load->view('template/footer');
+		$this->load->view('admin/template/header',$data);
+		$this->load->view('admin/add_article',$data);
+		$this->load->view('admin/template/footer');
 		
 	}
 

@@ -14,7 +14,7 @@ class Logout extends CI_Controller
 	{
 		if($this->session->has_userdata('username')){
 			$this->session->unset_userdata('username');
-			redirect('login/index');
+			redirect('admin/login/index');
 		}
 	}
 }

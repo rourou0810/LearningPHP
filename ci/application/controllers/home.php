@@ -14,9 +14,9 @@ class Home extends CI_Controller
 	{
 		if($this->session->has_userdata('username')){
 			$data['name'] = $this->session->userdata('username');
-			$this->load->view('template/header',$data);
-			$this->load->view('index');
-			$this->load->view('template/footer');
+			$this->load->view('admin/template/header',$data);
+			$this->load->view('admin/index');
+			$this->load->view('admin/template/footer');
 		}else{
 			redirect('login/index');
 		}
